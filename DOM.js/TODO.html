@@ -9,7 +9,7 @@
 
     let ctr = 1;
 
-    function deleteTodo( index ) {
+    function deleteTodo(index) {
         // console.log("Deleteeee")
         const element = document.getElementById(index);
         element.parentNode.removeChild(element);
@@ -23,15 +23,15 @@
         const newDivEl = document.createElement("div");
 
         newDivEl.setAttribute("id", ctr);
-       
 
-        newDivEl.innerHTML = "<div>" + value + "</div> <button onclick = 'deleteTodo("+ ctr + " ) '> delete </button>";
 
- ctr = ctr + 1;
+        newDivEl.innerHTML = "<div>" + value + "</div> <button onclick = 'deleteTodo(" + ctr + " ) '> delete </button>";
+
+        ctr = ctr + 1;
         // newDivEl.innerHTML= "<div> gdjks </div> <button> delete </button>"
 
         document.querySelector("body").appendChild(newDivEl)
-        
+
 
     }
 </script>
