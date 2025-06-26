@@ -1,21 +1,39 @@
 <html>
-    <body>
-        <input type="text">
-        <button onclick="addTodo()"> Add todo!</button>
-    </body>
 
-    <script>
+<body>
+    <input type="text">
+    <button onclick="addTodo()"> Add todo!</button>
+</body>
 
-        function addTodo() {
-            const inputEl = document.querySelector("input");
-            const value = inputEl.value;
-            // console.log (value);
+<script>
 
-            const newDivEl = document.createElement ("div");
-            newDivEl.innerHTML= value;
+    let ctr = 1;
 
-            document.querySelector("body").appendChild(newDivEl)
+    function deleteTodo( index ) {
+        // console.log("Deleteeee")
+        const element = document.getElementById(index);
+        element.parentNode.removeChild(element);
 
-        }
-    </script>
+    }
+    function addTodo() {
+        const inputEl = document.querySelector("input");
+        const value = inputEl.value;
+        // console.log (value);
+
+        const newDivEl = document.createElement("div");
+
+        newDivEl.setAttribute("id", ctr);
+       
+
+        newDivEl.innerHTML = "<div>" + value + "</div> <button onclick = 'deleteTodo("+ ctr + " ) '> delete </button>";
+
+ ctr = ctr + 1;
+        // newDivEl.innerHTML= "<div> gdjks </div> <button> delete </button>"
+
+        document.querySelector("body").appendChild(newDivEl)
+        
+
+    }
+</script>
+
 </html>
