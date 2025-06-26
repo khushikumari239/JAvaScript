@@ -1,0 +1,92 @@
+
+
+<!-- APROACH 1----------❤️------- -->
+
+
+<input type="text" />
+
+<button onclick="addTodo()">Add To-Do!</button>
+
+<script>
+function addTodo() {
+    const value = document.querySelector("input").value;
+    if (!value) return; // avoid adding empty todos
+
+    const spanEl = document.createElement("span");
+    spanEl.textContent = value;
+
+    const buttonEl = document.createElement("button");
+    buttonEl.textContent = "Delete";
+
+    // Add event listener to delete the to-do item
+    buttonEl.addEventListener("click", function() {
+        divEl.remove();
+    });
+
+    const divEl = document.createElement("div");
+    divEl.appendChild(spanEl);
+    divEl.appendChild(buttonEl);
+
+    document.body.appendChild(divEl);
+
+    // Clear input after adding
+    document.querySelector("input").value = "";
+}
+</script>
+
+
+
+
+<!-- APROACH 2----------------❤️ -->
+
+<!-- 🌼🌸🕊️🫠❤️🔥🤌🤌😤😴💗 -->
+
+
+<!-- <body>
+    <input type="text" />
+    <button onclick="addTodo()">Add To-Do!</button>
+
+    <script>
+        let todos = [];
+
+        function addTodo() {
+            const input = document.querySelector("input");
+            const value = input.value.trim();
+            if (!value) return;
+
+            todos.push(value);
+            input.value = "";
+            renderTodos();
+        }
+
+        function renderTodos() {
+            // Remove old todo items
+            const oldTodos = document.querySelectorAll(".todo-item");
+            oldTodos.forEach(todo => todo.remove());
+
+            todos.forEach((todo, index) => {
+                const divEl = document.createElement("div");
+                divEl.classList.add("todo-item");
+
+                const spanEl = document.createElement("span");
+                spanEl.textContent = todo;
+
+                const buttonEl = document.createElement("button");
+                buttonEl.textContent = "Delete";
+                buttonEl.addEventListener("click", () => {
+                    deleteTodo(index);
+                });
+
+                divEl.appendChild(spanEl);
+                divEl.appendChild(buttonEl);
+
+                document.body.appendChild(divEl);
+            });
+        }
+
+        function deleteTodo(index) {
+            todos.splice(index, 1);
+            renderTodos();
+        }
+    </script>
+</body> -->
